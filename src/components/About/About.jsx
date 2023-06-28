@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
 const Div = styled.div`
-  width:100%;
+  width:400px;
   height:100%;
-  margin-top:10px;
   background-color:MediumPurple;
   padding:2px;
   border-radius:10px;
+  margin:auto;
 `;
 
 const Parr = styled.h4`
   border-radius:10px;
+  color:lightyellow;
+  text-align: center;
+  padding:10px;
 `;
 export default function About() {
 

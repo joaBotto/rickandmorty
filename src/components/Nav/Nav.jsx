@@ -7,8 +7,7 @@ const NavPrincipal = styled.nav`
   height:40px;
   margin-left:300px;
   border-radius:10px;
-  background-color: purple;
-
+  background-color: #161626;
 `;
 const ButtonClose = styled.button`
   margin: 10px;
@@ -18,14 +17,16 @@ const ButtonClose = styled.button`
   border:0;
   border-radius: 3px;
   background-color: MediumPurple;
-  box-shadow: black 5px 5px 5px;
+  box-shadow: lightgreen 5px 5px 5px;
   cursor: pointer;
   height: 25px;
   width:80px;
   &:hover {
-    background-color:lightgreen;
+    background-color:lightblue;
     cursor:pointer;
+    height:20px;
     transition: 0.5s;
+    box-shadow:none;
   }
   &:active {
     background-color:#6b6e6f;

@@ -104,6 +104,11 @@ const Name = styled.h2`
   background-color: MediumPurple;
   color:black;
   border-radius:15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover{
+    transform: scaleY(.94);
+    box-shadow: 10px 10px 10px black;
+  }
 `;
 
 const InfoText = styled.h4`

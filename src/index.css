@@ -5,10 +5,11 @@ body {
   /* font-family: "Shadows Into Light"; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-repeat:repeat-x;
-  background-size:contain;
-  background-image: url('rickandmorty.jpeg');
-  background-attachment: fixed;
+  background-color:rgb(19, 8, 59);
+  /* background-repeat:repeat-x; */
+  /* background-size:cover; */
+  /* background-image: url('fondo1.jpeg'); */
+  /* background-attachment: fixed; */
 }
 
 code {
