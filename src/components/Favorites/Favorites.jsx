@@ -7,22 +7,20 @@ const CardsContainer = styled.div`
 display:flex;
 flex-wrap:no-wrap;
 justify-content:center;
-margin-top:10px;
 `;
-const Name = styled.div`
+const Name = styled.h1`
   font-size: 1.2rem;
   padding: .6rem;
   background-color: MediumPurple;
   color:black;
-  display:inline;
-  height:60px;
+  height:20px;
   `;
 
 const Favourites = ({ myFavourites }) => {
   
   return (
     <CardsContainer>
-      <Name>My Favourites:</Name>
+      <Name>Favs:</Name>
 
       {myFavourites?.map(
         ({

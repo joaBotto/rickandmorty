@@ -25,11 +25,11 @@ export default function Detail() {
     <DivCard>
       {character.name && (
         <>
-          <Info>{character.name}</Info>
-          <p>{character.status}</p>
-          <p>{character.species}</p>
-          <p>{character.gender}</p>
-          <p>{character.origin?.name}</p>
+          <Info>Name: {character.name}</Info>
+          <p>Status: {character.status}</p>
+          <p>Species: {character.species}</p>
+          <p>Gender: {character.gender}</p>
+          <p>Origen: {character.origin?.name}</p>
           <Img src={character.image} alt="image"/>
         </>
       )}
@@ -38,22 +38,20 @@ export default function Detail() {
 }
 const DivCard = styled.div`
   border: 3px solid #b5b5b5;
-  overflow:auto;
   border-radius: 15px;
   width: 250px;
-  height:500px;
+  height:400px;
   color: MediumPurple;
   background-color: #161626; 
-  margin: 3px;
-  padding:10px;
+  margin: auto;
+  padding:25px;
 `;
 const Info = styled.h1`
   font-size: 15pt;
   line-height: .7em;
 `;
 const Img = styled.img`
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    position: relative;
-    top: 3px;
+    width: 85%;
+    border-radius: 10px;
+    margin-left:17px;
 `;

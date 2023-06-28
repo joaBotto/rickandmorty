@@ -10,6 +10,10 @@ margin-top:10px;
 `;
 const DivP = styled.div` 
   background-color: MediumPurple;
+  border-radius:7px;
+  height:27px;
+  display:inline;
+  margin-left:245px;
 `;
 export default function Cards({characters, onClose}) {
   return (

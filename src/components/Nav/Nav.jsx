@@ -6,7 +6,9 @@ const NavPrincipal = styled.nav`
   width:700px;
   height:40px;
   margin-left:300px;
-  background-color: none;
+  border-radius:10px;
+  background-color: purple;
+
 `;
 const ButtonClose = styled.button`
   margin: 10px;
@@ -38,7 +40,7 @@ export default function Nav({onSearch}){
       <Link to='/about'><ButtonClose>About</ButtonClose></Link>
       <Link to='/form'><ButtonClose>Form</ButtonClose></Link>
       <Link to='/favorites'><ButtonClose>Favourites</ButtonClose></Link>
-      <Link to="/"><ButtonClose>Back</ButtonClose></Link>
+      <Link to="/"><ButtonClose>Inicio</ButtonClose></Link>
       <SearchBar onSearch={onSearch} />
 
     </NavPrincipal>
