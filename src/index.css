@@ -1,0 +1,17 @@
+body {
+  font-family: "Shadows Into Light",-apple-system, BlinkMacSystemFont,'Pacifico', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* font-family: "Shadows Into Light"; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat:repeat-x;
+  background-size:contain;
+  background-image: url('rickandmorty.jpeg');
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
