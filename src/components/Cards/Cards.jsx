@@ -3,10 +3,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardsContainer = styled.div`
-display:flex;
-flex-wrap:no-wrap;
-justify-content:center;
-margin-top:10px;
+  display:flex;
+  flex-wrap:no-wrap;
+  justify-content:center;
+  margin-top:10px;
+  gap:10px;
 `;
 const DivP = styled.div` 
   background-color: MediumPurple;

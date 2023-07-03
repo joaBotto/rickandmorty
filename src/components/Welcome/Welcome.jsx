@@ -1,34 +1,65 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
-
+import { keyframes } from "styled-components";
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 const Title = styled.h1`
-  font-family:Kablammo;
-  font-size:30px;
-  color:white;
-  display:flex;
-  justify-content:center;
-`
+  font-family: Kablammo;
+  font-size: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  animation: ${fadeInAnimation} 0.3s ease-out;
+`;
 
 const DivText = styled.div`
-  width:300px;
-  display:flex;
-  margin-left:34%;
+  width: 300px;
+  display: flex;
+  margin: auto;
+  background-color: #161626;
+  animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const SecondTitle = styled.h4`
-  margin-left:100px;
-  color:lightyellow;
+  color: lightyellow;
   text-align: center;
+  animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const Developed = styled.footer`
-  text-align:center;
-  background:#282c34;
+  text-align: center;
+  background: #282c34;
+  animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const ButtonInit = styled.button`
-  margin-left:570px;
+  margin-left: 580px;
+  margin-top: 5px;
+  right: 80px;
+  color: black;
+  border: 0;
+  border-radius: 3px;
+  background-color: MediumPurple;
+  box-shadow: black 5px 5px 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  animation: 0.3s ease-out forwards;
+  &:hover {
+    background-color: lightgreen;
+    cursor: mouse;
+    transition: 0.5s;
+  }
+  animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const Welcome = () => {
@@ -36,13 +67,18 @@ const Welcome = () => {
     <>
       <Title>Welcome to the Rick And Morty App</Title>
       <DivText>
-        <SecondTitle>In this application you will find a completely fun world in which you can immerse yourself in the exciting adventure of learning about the different characters from the Rick And Morty series.
+        <SecondTitle>
+          In this application you will find a completely fun world in which you
+          can immerse yourself in the exciting adventure of learning about the
+          different characters from the Rick And Morty series.
         </SecondTitle>
       </DivText>
       <Developed>Developed By: Botto Joaquin</Developed>
-      <Link to="/form"><ButtonInit>Start experience</ButtonInit></Link>
-    </> 
-  )
-}
+      <Link to="/form">
+        <ButtonInit>Start experience</ButtonInit>
+      </Link>
+    </>
+  );
+};
 
 export default Welcome;
