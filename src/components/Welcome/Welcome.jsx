@@ -5,32 +5,38 @@ import { keyframes } from "styled-components";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: (20px);
   }
   to{
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0);
+  }
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 `;
 const Title = styled.h1`
   font-family: Kablammo;
   font-size: 30px;
-  color: white;
   display: flex;
   justify-content: center;
   animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const DivText = styled.div`
-  width: 300px;
+  width: 400px;
   display: flex;
   margin: auto;
-  background-color: #161626;
+  margin-top: 20px;
+  background-color: #1579;
   animation: ${fadeInAnimation} 0.3s ease-out;
 `;
 
 const SecondTitle = styled.h4`
-  color: lightyellow;
+  font-size: 0.8em;
   text-align: center;
   animation: ${fadeInAnimation} 0.3s ease-out;
 `;
@@ -39,27 +45,29 @@ const Developed = styled.footer`
   text-align: center;
   background: #282c34;
   animation: ${fadeInAnimation} 0.3s ease-out;
+  margin-top: 10px;
 `;
 
 const ButtonInit = styled.button`
-  margin-left: 580px;
-  margin-top: 5px;
+  margin-left: 500px;
+  margin-top: 250px;
   right: 80px;
-  color: black;
+  color: lightgreen;
+  font-size: 2.2em;
   border: 0;
-  border-radius: 3px;
-  background-color: MediumPurple;
+  border-radius: 50px;
+  background-color: #1579;
   box-shadow: black 5px 5px 5px;
   cursor: pointer;
-  height: 40px;
-  width: 100px;
+  height: 200px;
+  width: 300px;
   animation: 0.3s ease-out forwards;
   &:hover {
-    background-color: lightgreen;
+    background-color: #1879;
     cursor: mouse;
     transition: 0.5s;
   }
-  animation: ${fadeInAnimation} 0.3s ease-out;
+  animation: ${fadeInAnimation} 0.2s ease-out;
 `;
 
 const Welcome = () => {
@@ -73,10 +81,10 @@ const Welcome = () => {
           different characters from the Rick And Morty series.
         </SecondTitle>
       </DivText>
-      <Developed>Developed By: Botto Joaquin</Developed>
       <Link to="/form">
         <ButtonInit>Start experience</ButtonInit>
       </Link>
+      <Developed>Developed By: Botto Joaquin</Developed>
     </>
   );
 };

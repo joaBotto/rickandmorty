@@ -3,8 +3,8 @@ import { useState } from "react";
 import style from "./Form.module.css";
 import { Link } from "react-router-dom";
 const regEx = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{3})+$/;
-const StyledForm = styled.div`
-  background-color: #f2f2f2;
+const StyledForm = styled.form`
+  background-color: #1749;
   margin: auto;
   margin-top: 30px;
   padding: 25px;
@@ -25,7 +25,7 @@ const StyledForm = styled.div`
 
 const Input = styled.input`
   width: 170px;
-  background-color: MediumPurple;
+  background-color: #1149;
   color: black;
   border: none;
   padding: 10px 15px 5px;
@@ -34,22 +34,19 @@ const Input = styled.input`
   &:hover {
     background-color: lightgreen;
     cursor: mouse;
-    width: 180px;
     transition: 0.5s;
   }
   &:focus {
     outline: none;
     width: 200px;
-  }
-  &:active {
-    background-color: #6b6e6f;
+    background-color: #1739;
   }
 `;
 
 const Button = styled.button`
   width: 50px;
   height: 20px;
-  background-color: MediumPurple;
+  background-color: #1749;
   color: black;
   border: none;
   cursor: pointer;
@@ -75,7 +72,7 @@ const ButtonBack = styled.button`
   width: 50px;
   height: 20px;
   border: none;
-  background-color: MediumPurple;
+  background-color: #1749;
   color: black;
   cursor: pointer;
 
@@ -106,12 +103,6 @@ const validate = (userData, setErrors, errors) => {
   } else {
     if (regEx.test(userData.email)) setErrors({ ...errors, email: "" });
     else setErrors({ ...errors, email: "Invalid mail" });
-    //   if (userData.password.length < 4) {
-    //     setErrors({ ...errors, password: "The password is very short" });
-    //   } else {
-    //     setErrors({ ...errors, password: "" });
-    //   }
-    // }
   }
 };
 
@@ -128,6 +119,9 @@ export default function Form() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (!errors.email || !errors.password) {
+      return;
+    }
   };
 
   const handleChange = (event) => {
@@ -148,7 +142,8 @@ export default function Form() {
         placeholder="Your email"
         value={userData.email}
         onChange={handleChange}
-        // className={!errors.email ? style.miss : style.success}
+        required
+        className={!errors.email ? style.success : style.miss}
       />
       <SpanError>{errors.email}</SpanError>
       <label htmlFor="password">Password:</label>
@@ -158,16 +153,17 @@ export default function Form() {
         placeholder="Your password"
         value={userData.password}
         onChange={handleChange}
-        // className={!errors.password ? style.miss : style.success}
+        required
+        className={!errors.password ? style.success : style.miss}
       />
       <SpanError>{errors.password}</SpanError>
-      <br />
+      <hr />
       <Link to="/home">
         <Button type="submit" name="button">
           Log In
         </Button>
       </Link>
-      <br />
+      <hr />
     </StyledForm>
   );
 }

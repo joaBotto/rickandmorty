@@ -16,7 +16,7 @@ const ButtonClose = styled.button`
   color: black;
   border: 0;
   border-radius: 3px;
-  background-color: MediumPurple;
+  background-color: #1749;
   box-shadow: lightgreen 5px 5px 5px;
   cursor: pointer;
   height: 25px;

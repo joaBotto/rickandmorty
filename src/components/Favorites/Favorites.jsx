@@ -12,7 +12,7 @@ const CardsContainer = styled.div`
 const Name = styled.h1`
   font-size: 1.2rem;
   padding: 0.6rem;
-  background-color: MediumPurple;
+  background-color: #1749;
   color: black;
   height: 20px;
 `;

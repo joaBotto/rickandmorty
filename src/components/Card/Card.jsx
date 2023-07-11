@@ -123,13 +123,14 @@ const DivCard = styled.div`
   border-radius: 15px;
   width: 250px;
   height: 350px;
-  color: MediumPurple;
-  background-color: #161626;
+  color: violet;
+  background-color: #1748;
   margin: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${scaleAnimation} 0.3s ease-out;
   &:hover {
     transform: scale(1.1);
+    background-color: #1268;
   }
 `;
 
@@ -145,7 +146,7 @@ const Name = styled.h2`
   font-size: 1rem;
   width: 50%;
   height: 30%;
-  background-color: MediumPurple;
+  background-color: #173;
   color: black;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -179,7 +180,7 @@ const ButtonClose = styled.button`
   color: balck;
   border: 0;
   border-radius: 3px;
-  background-color: MediumPurple;
+  background-color: #1749;
   box-shadow: black 5px 5px 5px;
   cursor: pointer;
   height: 25px;
@@ -196,7 +197,7 @@ const ButtonFav = styled.button`
   color: white;
   border: 2px;
   border-radius: 3px;
-  background-color: MediumPurple;
+  background-color: #1749;
   box-shadow: black 5px 5px 5px;
   cursor: pointer;
   &:hover {
