@@ -20,7 +20,7 @@ export default function Cards({ characters, onClose }) {
   return (
     <>
       <DivP>
-        You must put a number between 1 and 826 in the search bar of Rick And
+        You must put a number between 1 and 5 in the search bar of Rick And
         Morty person, after that, click on "Add"
       </DivP>
       <CardsContainer className={styled.container}>
