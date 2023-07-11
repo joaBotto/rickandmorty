@@ -22,6 +22,4 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, "localhost", null, () => {
-  console.log(`Server raised in port ${PORT}`);
-});
+server.listen(PORT, "localhost");

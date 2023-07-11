@@ -14,7 +14,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   function onSearch(id) {
-    axios(`http://localhost:3001/riackandmorty/character/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
