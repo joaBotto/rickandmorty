@@ -4,9 +4,9 @@ const data = require("./Utils/data");
 const PORT = 3001;
 const server = http.createServer((req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  console.log(req);
   const { url } = req;
   if (url.includes("/rickandmorty/character")) {
+    // El código utiliza la función split("/") para dividir la URL en varias partes utilizando la barra diagonal como separador. Luego, at(-1) se utiliza para obtener el último elemento del arreglo resultante. Este último elemento supuestamente contiene un número en forma de texto.
     const id = Number(url.split("/").at(-1));
     const personaje = data.find((personaje) => personaje.id === id);
     if (personaje) {
