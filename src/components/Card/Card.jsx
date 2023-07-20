@@ -123,14 +123,14 @@ const DivCard = styled.div`
   border-radius: 15px;
   width: 250px;
   height: 350px;
-  color: violet;
+  color: black;
   background-color: #1748;
   margin: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${scaleAnimation} 0.3s ease-out;
   &:hover {
     transform: scale(1.1);
-    background-color: #1268;
+    background-color: #174;
   }
 `;
 

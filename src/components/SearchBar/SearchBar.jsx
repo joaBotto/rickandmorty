@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const SearchContainer = styled.div`
-  width: 150px;
-  margin-top: -38px;
-  margin-left: -200px;
+  width: 200px;
+  margin-top: -40px;
+  margin-left: 900px;
 `;
 
 const SearchInput = styled.input`
@@ -17,7 +17,7 @@ const SearchInput = styled.input`
   height: 20px;
   background-color: #161626;
   color: white;
-  margin: 5px;
+  margin-right: 5px;
 `;
 
 const ButtonAdd = styled.button`

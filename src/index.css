@@ -1,8 +1,10 @@
 body {
-  font-family: "Shadows Into Light", -apple-system, BlinkMacSystemFont,
-    "Pacifico", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* font-family: "Shadows Into Light", -apple-system, BlinkMacSystemFont, */
+  /* "Pacifico", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; */
   /* font-family: "Shadows Into Light"; */
+  font-family: "VT323", monospace;
+  font-size: 1.3em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(19, 8, 59);

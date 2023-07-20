@@ -50,7 +50,7 @@ const Developed = styled.footer`
 
 const ButtonInit = styled.button`
   margin-left: 500px;
-  margin-top: 250px;
+  margin-top: 145px;
   right: 80px;
   color: lightgreen;
   font-size: 2.2em;

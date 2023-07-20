@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const NavPrincipal = styled.nav`
-  width: 700px;
+  width: 800px;
   height: 40px;
-  margin-left: 300px;
+  margin-left: 10%;
   border-radius: 10px;
   background-color: #161626;
 `;
 const ButtonClose = styled.button`
-  margin: 10px;
+  margin: 20px;
   margin-top: 4px;
-  margin-right: 50px;
+  margin-right: 60px;
   color: black;
   border: 0;
   border-radius: 3px;
@@ -20,7 +20,7 @@ const ButtonClose = styled.button`
   box-shadow: lightgreen 5px 5px 5px;
   cursor: pointer;
   height: 25px;
-  width: 80px;
+  width: 10%;
   &:hover {
     background-color: lightblue;
     cursor: pointer;
