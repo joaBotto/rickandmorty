@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import style from "./Form.module.css";
 import { Link } from "react-router-dom";
-const regEx = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{3})+$/;
+import validate from "./validate";
+// const regEx = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{3})+$/;
 const StyledForm = styled.form`
   background-color: #1749;
   margin: auto;
@@ -97,19 +98,19 @@ const SpanError = styled.span`
   color: red;
 `;
 
-const validate = (userData, setErrors, errors) => {
-  if (!userData.email) {
-    setErrors({ ...errors, email: "Invalid mail" });
-  } else {
-    if (regEx.test(userData.email)) setErrors({ ...errors, email: "" });
-    else setErrors({ ...errors, email: "Invalid mail" });
-  }
-};
+// const validate = (userData, setErrors, errors) => {
+//   if (!userData.email) {
+//     setErrors({ ...errors, email: "Invalid mail" });
+//   } else {
+//     if (regEx.test(userData.email)) setErrors({ ...errors, email: "" });
+//     else setErrors({ ...errors, email: "Invalid mail" });
+//   }
+// };
 
 export default function Form() {
   const [userData, setData] = useState({
-    email: "",
-    password: "",
+    email: "joaquinbotto2@hotmail.com",
+    password: "password123",
   });
 
   const [errors, setErrors] = useState({
@@ -143,7 +144,7 @@ export default function Form() {
         value={userData.email}
         onChange={handleChange}
         required
-        className={!errors.email ? style.success : style.miss}
+        // className={!errors.email ? style.success : style.miss}
       />
       <SpanError>{errors.email}</SpanError>
       <label htmlFor="password">Password:</label>
@@ -154,7 +155,7 @@ export default function Form() {
         value={userData.password}
         onChange={handleChange}
         required
-        className={!errors.password ? style.success : style.miss}
+        // className={!errors.password ? style.success : style.miss}
       />
       <SpanError>{errors.password}</SpanError>
       <hr />
