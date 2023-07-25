@@ -4,19 +4,19 @@ import { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 export default function Detail() {
-  const { id } = useParams();
-
   const [character, setCharacter] = useState({});
 
+  const { id } = useParams();
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+    axios
+      .get(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setCharacter(data);
           console.log(data);
         }
       })
-      .catch((error) => window.alert(error.response.data.error));
+      .catch((error) => alert(error.response.data.error));
 
     return setCharacter({});
   }, [id]);

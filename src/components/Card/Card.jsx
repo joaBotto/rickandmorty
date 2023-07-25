@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
@@ -20,15 +20,15 @@ function Card({
   removeFav,
   addFav,
 }) {
+  const { pathname } = useLocation();
+  const [isFav, setIsFav] = useState(false);
   useEffect(() => {
     myFavourites.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [myFavourites, id]);
-
-  const [isFav, setIsFav] = useState(false);
+  }, [myFavourites]);
 
   const handleFavorite = () => {
     if (isFav) {
@@ -43,6 +43,15 @@ function Card({
     <>
       <DivCard>
         <DivImg>
+          {pathname === "/home" && (
+            <ButtonClose
+              onClick={() => {
+                onClose(id);
+              }}
+            >
+              X
+            </ButtonClose>
+          )}
           {isFav ? (
             <ButtonFav
               title="Click para quitar de favoritos"
@@ -55,11 +64,11 @@ function Card({
               🤍
             </ButtonFav>
           )}
-          {isFav ? null : (
+          {/* {isFav ? null : (
             <ButtonClose title="Click para cerrar" onClick={() => onClose(id)}>
               Close
             </ButtonClose>
-          )}
+          )} */}
           <Img src={image} alt="" />
         </DivImg>
         <DivData>
@@ -80,11 +89,6 @@ function Card({
     </>
   );
 }
-export const mapStateToProps = (state) => {
-  return {
-    myFavourites: state.myFavourites,
-  };
-};
 export const mapDispatchToProps = (dispatch) => {
   return {
     addFav: (character) => {
@@ -95,21 +99,26 @@ export const mapDispatchToProps = (dispatch) => {
     },
   };
 };
+export const mapStateToProps = (state) => {
+  return {
+    myFavourites: state.myFavourites,
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 //! ESTILOS --------------------------------------------------
 
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// const fadeInAnimation = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translateY(20px);
+//   }
+//   to{
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// `;
 const scaleAnimation = keyframes`
   from {
     transform: scale(0);

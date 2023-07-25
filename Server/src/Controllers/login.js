@@ -1,8 +1,15 @@
-const datalog = require("../Utils/users");
-const login = () => {
+const users = require("../Utils/users");
+// ver archivo .env
+const login = (req, res) => {
   const { email, password } = req.query;
-  const user = usuarios.filter(
-    (user) => user.email === email && user.password === password
-  );
+
+  let access = false;
+
+  users.find((user) => user.email === email && user.password === password);
+  if (user) {
+    return res.status(204).json({ access: true });
+  }
+  return res.status(403).json({ access: false });
 };
+//
 module.exports = login;

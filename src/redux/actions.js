@@ -1,30 +1,25 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./types";
+import { ADD_FAV, REMOVE_FAV } from "./types";
+import axios from "axios";
+const URL = "http://localhost:3001/rickandmorty/fav";
 
 export const addFav = (character) => {
-  console.log(character);
-  return {
-    type: ADD_FAV,
-    payload: character,
+  return (dispatch) => {
+    axios.post(`${URL}`, character).then(({ data }) => {
+      return dispatch({
+        type: ADD_FAV,
+        payload: data,
+      });
+    });
   };
 };
 
 export const removeFav = (id) => {
-  return {
-    type: REMOVE_FAV,
-    payload: id,
-  };
-};
-
-export const filterCards = (gender) => {
-  return {
-    type: FILTER,
-    payload: gender,
-  };
-};
-
-export const orderCards = (order) => {
-  return {
-    type: ORDER,
-    payload: order,
+  return (dispatch) => {
+    axios.delete(`${URL}/${id}`).then(({ data }) => {
+      return dispatch({
+        type: REMOVE_FAV,
+        payload: data,
+      });
+    });
   };
 };
