@@ -23,33 +23,40 @@ function App() {
 
   const URL = "http://localhost:3001/rickandmorty/";
 
-  function login({ email, password }) {
-    axios(`${URL}login?email=${email}&password=${password}`).then(
-      ({ data }) => {
-        const { access } = data;
-        setAccess(access);
-        access && navigate("/home");
-      }
-    );
-  }
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
 
-  function onSearch(id) {
-    if (!id) alert("Ingresa un ID");
-    if (characters.find((char) => char.id === parseInt(id))) {
-      alert(`Ya existe el personaje con el id ${id}`);
-      return;
+  const login = async ({ email, password }) => {
+    try {
+      const { data } = await axios(
+        `${URL}login?email=${email}&password=${password}`
+      );
+      const { access } = data;
+      setAccess(access);
+      access && navigate("/home");
+    } catch (error) {
+      window.alert(error.response.data.error);
     }
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
-      .then(({ data }) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        }
-      })
-      .catch((error) => alert(error.response.data.error));
-  }
+  };
+
+  const onSearch = async (id) => {
+    try {
+      if (!id) alert("Ingresa un ID");
+      if (characters.find((char) => char.id === parseInt(id))) {
+        alert(`Ya existe el personaje con el id ${id}`);
+        return;
+      }
+      const { data } = await axios(
+        `https://rickandmortyapi.com/api/character/${id}`
+      );
+      if (data.name) {
+        setCharacters((oldChars) => [...oldChars, data]);
+      }
+    } catch (error) {
+      window.alert(error.response.data.error);
+    }
+  };
   function onClose(id) {
     setCharacters(characters.filter((character) => character.id !== id));
   }
@@ -61,7 +68,7 @@ function App() {
       {location.pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/form" element={<Form />} login={login} />
+        <Route path="/form" element={<Form login={login} />} />
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}

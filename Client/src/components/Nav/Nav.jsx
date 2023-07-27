@@ -43,7 +43,7 @@ export default function Nav({ onSearch }) {
         <ButtonClose>About</ButtonClose>
       </Link>
       <Link to="/form">
-        <ButtonClose>Form</ButtonClose>
+        <ButtonClose>Register</ButtonClose>
       </Link>
       <Link to="/favorites">
         <ButtonClose>Favourites</ButtonClose>

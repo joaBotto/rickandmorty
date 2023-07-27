@@ -6,7 +6,7 @@ const login = (req, res) => {
   let access = false;
 
   users.find((user) => user.email === email && user.password === password);
-  if (user) {
+  if (users) {
     return res.status(204).json({ access: true });
   }
   return res.status(403).json({ access: false });
