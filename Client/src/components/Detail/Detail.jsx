@@ -13,7 +13,6 @@ export default function Detail() {
       .then(({ data }) => {
         if (data.name) {
           setCharacter(data);
-          console.log(data);
         }
       })
       .catch((error) => alert(error.response.data.error));
@@ -24,7 +23,10 @@ export default function Detail() {
   return (
     <DivCard>
       <Link to="/home">
-        <ButtonBack>Back</ButtonBack>
+        <ButtonBack>Home</ButtonBack>
+      </Link>
+      <Link to="/favorites">
+        <ButtonBackF>Favs</ButtonBackF>
       </Link>
       {character.name && (
         <>
@@ -41,6 +43,23 @@ export default function Detail() {
 }
 const ButtonBack = styled.button`
   margin-bottom: 30px;
+  color: black;
+  border: 0;
+  border-radius: 3px;
+  background-color: #1749;
+  box-shadow: black 5px 5px 5px;
+  cursor: pointer;
+  height: 25px;
+  width: 45px;
+  &:hover {
+    background-color: lightgreen;
+    cursor: mouse;
+    transition: 0.5s;
+  }
+`;
+const ButtonBackF = styled.button`
+  margin-bottom: 30px;
+  margin-left: 160px;
   color: black;
   border: 0;
   border-radius: 3px;

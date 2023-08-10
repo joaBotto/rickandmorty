@@ -3,23 +3,29 @@ import axios from "axios";
 const URL = "http://localhost:3001/rickandmorty/fav";
 
 export const addFav = (character) => {
-  return (dispatch) => {
-    axios.post(`${URL}`, character).then(({ data }) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post(`${URL}`, character);
       return dispatch({
         type: ADD_FAV,
         payload: data,
       });
-    });
+    } catch (error) {
+      window.alert(error.message);
+    }
   };
 };
 
 export const removeFav = (id) => {
-  return (dispatch) => {
-    axios.delete(`${URL}/${id}`).then(({ data }) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.delete(`${URL}/${id}`);
       return dispatch({
         type: REMOVE_FAV,
         payload: data,
       });
-    });
+    } catch (error) {
+      window.alert(error.message);
+    }
   };
 };

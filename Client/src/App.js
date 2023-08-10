@@ -33,10 +33,15 @@ function App() {
         `${URL}login?email=${email}&password=${password}`
       );
       const { access } = data;
+      console.log(access);
       setAccess(access);
-      access && navigate("/home");
+      if (access) {
+        navigate("/home");
+      } else {
+        navigate("/form");
+      }
     } catch (error) {
-      window.alert(error.response.data.error);
+      window.alert(error.message);
     }
   };
 

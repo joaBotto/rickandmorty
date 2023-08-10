@@ -5,11 +5,11 @@ import { keyframes } from "styled-components";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
-    transform: (20px);
+    transform: translateX(-20px);
   }
   to{
     opacity: 1;
-    transform: translate(0);
+    transform: translateX(0);
   }
   0%{
     opacity: 0;
@@ -18,6 +18,18 @@ const fadeInAnimation = keyframes`
     opacity: 1;
   }
 `;
+const pulsateAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
 const Title = styled.h1`
   font-family: Kablammo;
   font-size: 30px;
@@ -45,12 +57,12 @@ const Developed = styled.footer`
   text-align: center;
   background: #282c34;
   animation: ${fadeInAnimation} 0.3s ease-out;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 const ButtonInit = styled.button`
   margin-left: 500px;
-  margin-top: 145px;
+  margin-top: 130px;
   right: 80px;
   color: lightgreen;
   font-size: 2.2em;
@@ -68,6 +80,7 @@ const ButtonInit = styled.button`
     transition: 0.5s;
   }
   animation: ${fadeInAnimation} 0.2s ease-out;
+  animation: ${fadeInAnimation} 0.3s ease-out, ${pulsateAnimation} 1.5s infinite;
 `;
 
 const Welcome = () => {

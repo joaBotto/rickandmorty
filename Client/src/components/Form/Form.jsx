@@ -109,8 +109,8 @@ const SpanError = styled.span`
 
 export default function Form() {
   const [userData, setData] = useState({
-    email: "joaquinbotto2@hotmail.com",
-    password: "password123",
+    email: "",
+    password: "",
   });
 
   const [errors, setErrors] = useState({
@@ -130,7 +130,7 @@ export default function Form() {
     const value = event.target.value;
 
     setData({ ...userData, [property]: value });
-    validate({ ...userData, [property]: value }, setErrors, errors);
+    setErrors(validate({ ...userData, [property]: value }));
   };
 
   return (
@@ -144,7 +144,6 @@ export default function Form() {
         value={userData.email}
         onChange={handleChange}
         required
-        // className={!errors.email ? style.success : style.miss}
       />
       <SpanError>{errors.email}</SpanError>
       <label htmlFor="password">Password:</label>

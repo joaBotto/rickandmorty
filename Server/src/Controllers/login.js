@@ -3,10 +3,10 @@ const users = require("../Utils/users");
 const login = (req, res) => {
   const { email, password } = req.query;
 
-  let access = false;
-
-  users.find((user) => user.email === email && user.password === password);
-  if (users) {
+  const user = users.find(
+    (user) => user.email === email && user.password === password
+  );
+  if (user) {
     return res.status(204).json({ access: true });
   }
   return res.status(403).json({ access: false });
