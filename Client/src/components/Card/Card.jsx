@@ -134,7 +134,7 @@ const DivCard = styled.div`
   height: 350px;
   color: black;
   background-color: #1748;
-  margin: 15px;
+  margin: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${scaleAnimation} 0.3s ease-out;
   &:hover {

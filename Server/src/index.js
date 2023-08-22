@@ -4,12 +4,14 @@ const cors = require("cors");
 const PORT = 3001;
 const server = express();
 const router = require("./Routes/index");
+const { conn } = require("./DB_connection");
 
-server.use(morgan("dev")); //todo ---> Un midleware es el intermediario entre la request del cliente, y la response que damos desde el servidor (intermediario entre el front y el back), nos sirve para validar los datos.
+server.use(morgan("dev"));
 server.use(cors());
 server.use(express.json());
 server.use("/rickandmorty", router);
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
+  await conn.sync({ force: true });
   console.log("Server raised in port: " + PORT);
 });

@@ -3,10 +3,11 @@ import React from "react";
 import styled from "styled-components";
 
 const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: no-wrap;
-  justify-content: center;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+  margin-top: 25px;
+  margin: 30px;
   gap: 10px;
 `;
 const DivP = styled.div`
